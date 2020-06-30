@@ -1,7 +1,7 @@
-import { Far } from "/Far.js";
-import { Mid } from "/Mid.js";
-let far;
-let mid;
+import { Far } from "/Far.js"
+import { Mid } from "/Mid.js"
+import {Scroller} from "/Scroller.js"
+let scroller;
 let renderer;
 let stage;
 function init() {
@@ -9,15 +9,11 @@ function init() {
   renderer = PIXI.autoDetectRenderer(512, 384, {
     view: document.getElementById("game-canvas"),
   });
-  far = new Far();
-  stage.addChild(far);
-  mid = new Mid();
-  stage.addChild(mid);
+  scroller = new Scroller(stage);
   requestAnimationFrame(update);
 }
 function update() {
-  far.tilePosition.x -= 0.128;
-  mid.tilePosition.x -= 0.64;
+  scroller.update();
   renderer.render(stage);
   requestAnimationFrame(update);
 }

@@ -1,4 +1,4 @@
-export { Far };
+export { Far }
 
 function Far() {
   var texture = PIXI.Texture.fromImage("./resources/bg-far.png");
@@ -9,3 +9,6 @@ function Far() {
   this.tilePosition.y = 0;
 }
 Far.prototype = Object.create(PIXI.extras.TilingSprite.prototype);
+Far.prototype.update = function () {
+  this.tilePosition.x -= 0.128;
+};

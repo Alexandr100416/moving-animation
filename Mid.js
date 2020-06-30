@@ -8,3 +8,6 @@ function Mid() {
   this.tilePosition.y = 0;
 }
 Mid.prototype = Object.create(PIXI.extras.TilingSprite.prototype);
+Mid.prototype.update = function() {
+  this.tilePosition.x -= 0.64;
+};
