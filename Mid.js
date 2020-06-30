@@ -1,8 +1,9 @@
 export { Mid };
-function Mid(texture, width, height) {
-  PIXI.extras.TilingSprite.call(this, texture, width, height);
+function Mid() {
+  var texture = PIXI.Texture.fromImage("./resources/bg-mid.png");
+  PIXI.extras.TilingSprite.call(this, texture, 512, 256);
   this.position.x = 0;
-  this.position.y = 0;
+  this.position.y = 128;
   this.tilePosition.x = 0;
   this.tilePosition.y = 0;
 }
